@@ -1,8 +1,39 @@
+# Exercise-Tracker using MERN Stack
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `node server.js`
+Runs the backend server.<br />
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+To test the server API, I'm using a tool called [Insomnia](https://insomnia.rest/).[Postman](https://www.getpostman.com/) is a great tool for this purpose too.
+## Database Connection
+For this project I'm hosting the database using MongoDB Atlas, I'm using a free tier on MongoDB Atlas, you can use a local database.
+[MongoDb Atlas-Getting started](https://codeforgeek.com/mongodb-atlas-node-js/)
+
+#### Note:
+To test the backend server you need to:
+- Inside the root folder (“mern-exercise-tracker”)
+- In terminal run `cd backend`
+- then run `node server.js`
+
+## API endpoints
+- The server URL is [https://localhost:5000](https://localhost:5000)
+- You can send a GET request to [https://localhost:5000/users/](https://localhost:5000/users/) and get a list of users back 
+- You can send a GET request to [https://localhost:5000/exercises/](https://localhost:5000/exercises/) and get a list of exercises back
+- To add a user, enter the url: [http://localhost:5000/users/add](http://localhost:5000/users/add), and the JSON.
+- To post an exercise to [http://localhost:5000/exercises/add](http://localhost:5000/exercises/add), to check send a GET request to [http://localhost:5000/exercises/](http://localhost:5000/exercises/), or the MongoDB Atlas dashboard.
+- Given an id of the exercise `/:id` GET endpoint returns an exercise item.
+- To update an existing exercise item, use the `/update/:id` POST endpoint.
+- To delete the exercise, send a DELETE request.
+
+
 
 ### `npm start`
 
@@ -12,57 +43,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
