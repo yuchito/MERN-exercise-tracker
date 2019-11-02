@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ export default class CreateUser extends Component {
     this.state = {
       username: ''
     };
-  }
+  } 
+  // method to update props of state
   onChangeUsername(e) {
     this.setState ({
       username: e.target.value
@@ -22,10 +24,14 @@ export default class CreateUser extends Component {
     e.preventDefault ();
 
     const newUser = {
-      usename: this.state.username,
+      username: this.state.username,
     };
 
-    console.log(newUser);
+    //console.log(newUser);
+    // Send an HTTP POST request to the backend endpoint
+    // endpoint is expecting a JSON object in the req body, so we pass newUser as second arg
+    axios.post('http://localhost:5000/users/add', newUser)
+    .then(res => console.log(res.data));
 
     this.setState ({
       username: ''
