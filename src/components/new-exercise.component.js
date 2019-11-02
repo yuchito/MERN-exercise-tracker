@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
 
 export default class CreateExercise extends Component {
     constructor(props) {
@@ -25,14 +26,23 @@ export default class CreateExercise extends Component {
 
         
     }
-    // The user need to select the user associated with the exercise while filling the form
-    // Normally the user list will come directly from the DB
-    // For now a hardcoded user to test this out
+    // The user need to select the user associated with the exercise while filling the form    
     componentDidMount() {
-        this.setState({ 
-          users: ['test user', 'Houssam'],
-          username: 'Houssam'
-        });
+        // Sends an HTTP GET request to the backend endpoint
+        // Get the user list from the DB and add it to dropmenu in the form
+
+        axios.get('http://localhost:5000/users/')
+        .then(response => {
+            if (response.data.length > 0) {
+            this.setState({ 
+                users: response.data.map(user => user.username),
+                username: response.data[0].username
+            });
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        })
       }
     // methods to update the props of state
     onChangeUsername(e) {
@@ -70,7 +80,13 @@ export default class CreateExercise extends Component {
             date: this.state.date,
         };
 
-        console.log(exercise);
+        //console.log(exercise);
+
+        // Send an HTTP POST request to the backend endpoint
+        // endpoint is expecting a JSON object in the req body, so we pass exercise as second arg
+
+        axios.post('http://localhost:5000/exercises/add', exercise)
+        .then(res => console.log(res.data));
         // after submitting the user is taken back to the home page
         window.location = '/';
 
