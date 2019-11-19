@@ -14,6 +14,10 @@ const Exercise = props => (
     </td>
   </tr>
 )
+const divStyle = {
+  marginLeft: '15px',
+  marginRight: '15px'
+}
 export default class ExercisesList extends Component {
   //Add a constructor to initialize the state with an empty exercises array and to bind this delete method
   constructor(props) {
@@ -52,9 +56,11 @@ export default class ExercisesList extends Component {
       return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
     })
   }
+  
+    
   render() {
     return (
-      <div>
+      <div style={divStyle}>
         <h3>Logged Exercises</h3>
         <table className="table">
           <thead className="thead-success">

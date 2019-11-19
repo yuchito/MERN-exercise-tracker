@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const divStyle = {
+  marginLeft: '15px',
+  marginRight: '15px'
+}
 export default class CreateUser extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +43,7 @@ export default class CreateUser extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={divStyle}>
         <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

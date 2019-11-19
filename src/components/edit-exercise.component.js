@@ -3,6 +3,10 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 
+const divStyle = {
+  marginLeft: '15px',
+  marginRight: '15px'
+}
 export default class EditExercise extends Component {
     //Add a constructor to initialize the state props and to bind this to methods
   constructor(props) {
@@ -101,7 +105,7 @@ export default class EditExercise extends Component {
 
   render() {
     return (
-      <div>
+      <div style={divStyle}>
         <h3>Edit Exercise Log</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 

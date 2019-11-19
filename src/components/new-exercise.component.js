@@ -4,6 +4,11 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 
+
+const divStyle = {
+    marginLeft: '15px',
+    marginRight: '15px'
+  }
 export default class CreateExercise extends Component {
     constructor(props) {
         super(props);
@@ -93,7 +98,7 @@ export default class CreateExercise extends Component {
     }
   render() {
     return (
-      <div>
+      <div style={divStyle}>
           <h3>Create New Exercise Log</h3>
           <form onSubmit={this.onSubmit}>
               <div className="form-group">
