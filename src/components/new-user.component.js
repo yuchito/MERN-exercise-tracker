@@ -59,6 +59,11 @@ export default class CreateUser extends Component {
             <input type="submit" value="Create new user" className="btn btn-success" />
           </div>
         </form>
+        <footer>
+          <p>
+            ** You need to connect your MongoDB 
+          </p>
+          </footer>
       </div>
     )
   }
