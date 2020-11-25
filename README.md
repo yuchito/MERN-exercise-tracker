@@ -1,7 +1,9 @@
 # Exercise-Tracker using MERN Stack
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This project was deployed with [Heroku](https://www.heroku.com/).
-Check it out here => [https://my-exercises-tracker.herokuapp.com/](https://my-exercises-tracker.herokuapp.com/)
+## App Demo
+
+[https://my-exercises-tracker.herokuapp.com/](https://my-exercises-tracker.herokuapp.com/)
 
 
 ## Available Scripts
